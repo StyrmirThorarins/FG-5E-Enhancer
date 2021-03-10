@@ -3,8 +3,8 @@
 <root version="3.0" release="1">
 
 	<properties>
-		<name>5E Enhancer v0.11.0</name>
-		<version>0.11.0</version>
+		<name>5E Enhancer v0.11.1</name>
+		<version>0.11.1</version>
 		
 		<author>Styrmir T.</author>
 		<description>5E Enhancer</description>
@@ -17,6 +17,12 @@
 	</properties>    	
 
 	<base>		
+		<!-- Strings -->
+		<includefile source="strings/strings_5e.xml" />
+
+		<!-- Common -->
+		<includefile source="common/template_toolbar.xml" />
+
 		<!-- Presented in alphabetic order of the .lua file in the /scripts folder -->		
 
 		<!-- automatic_range_modifier -->
@@ -24,6 +30,7 @@
 		<script name="RangeFinder" file="scripts/automatic_range_modifier/range_finder.lua" />	<!-- Returns the distance between two tokens -->						
 		<script name="TokenHelper" file="scripts/automatic_range_modifier/token_helper.lua" />	<!-- Helper functions for map tokens, needed for ranged_attacks.lua -->						
 		<script name="ActionAttack" file="scripts/automatic_range_modifier/manager_action_attack.lua" />   <!-- Imported from 5e Ruleset, modified to hook into scripts handling range modifiers for ranged attacks -->				
+		<script name="CombatEnhancer" file="scripts/5e_combat_enhancer.lua" />        <!-- Custom modifications and additions to the base extension -->		
 
 		<!-- flanking -->
 		<script name="TokenHelper" file="scripts/flanking/token_helper.lua" />        <!-- Custom modifications and additions to the base extension -->		
@@ -49,7 +56,13 @@
 		<includefile source="campaign/record_ability.xml" />    <!-- pc feat/feature/trait: <windowclass name="ref_ability">  -->
 		<includefile source="campaign/record_power.xml" />	  	<!-- spells: <windowclass name="power"> -->		
 		<includefile source="campaign/record_feat.xml" />	    <!-- Feat from list: <windowclass name="reference_feat"> -->		
+		<includefile source="campaign/record_image.xml" />	
 		
+
+
+		<!-- When token hovered in combat tracker, token on map highlighted -->		
+		<includefile source="ct/ct_host.xml" />
+
 		<!-- ct_actor_highlighter.lua: When token clicked on map, actor owner of that token on the CT is highlighted -->		
 		<script name="CTActorHighlighter" file="scripts/ct_actor_highlighter.lua" />   
 
@@ -159,8 +172,8 @@
 		</template>
 
 		<!-- 5E Enhancer Icon -->
-		<icon name="ce_icon" file="graphics/icons/5E_enhancer_icon.png" />				
+		<icon name="ce_icon" file="graphics/icons/5e_enhancer_icon.png" />				
 	</base>			
 
-	<announcement text="5E Enhancer v0.11.0" font="emotefont" icon="ce_icon" />			
+	<announcement text="5E Enhancer v0.11.1" font="emotefont" icon="ce_icon" />			
 </root>
